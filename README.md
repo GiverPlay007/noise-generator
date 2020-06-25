@@ -1,1 +1,3 @@
 # NoiseGenerator
+
+Algoritmozim :3
