@@ -18,14 +18,8 @@ public final class ImprovedNoise
 		{
 			for(int x = 0; x < Main.WIDTH; x++)
 			{
-				//double dx = (double) (x / Main.HEIGHT);
-				//double dy = (double) (y / Main.HEIGHT);
-				
 				double dx = (double) (x / 610.331);
 				double dy = (double) (y / 610.331);
-
-				
-				//int frequency = 100;
 				
 				double noise = noise(dx * time + time, dy * time + time, time);
 				noise = (noise -1) / 2;
