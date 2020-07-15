@@ -10,7 +10,7 @@ import javax.swing.Timer;
 
 public class Main extends JPanel
 {
-	public static final int PERLIN_NOISE = 0;
+	public static final int IMPROVED_NOISE = 0;
 	public static final int RANDOM_NOISE = 1;
 	
 	public static final int WIDTH = 720;
@@ -23,16 +23,18 @@ public class Main extends JPanel
 	private JFrame frame;
 	
 	private int alg;
-
+	
 	public static void main(String[] args)
 	{
-		new Main(RANDOM_NOISE);
+		new Main(IMPROVED_NOISE);
 	}
 	
 	protected void paintComponent(Graphics g) 
 	{
 		super.paintComponent(g);
-		g.drawImage(getNoiseImage(), 0, 0, this);
+		
+		BufferedImage image = getNoiseImage();
+		g.drawImage(image, 0, 0, this);
 	}
 	
 	public Main(int algorithm)
@@ -59,12 +61,11 @@ public class Main extends JPanel
 			return RandomNoise.getNoiseImage(random);
 		}
 		
-		if(alg == PERLIN_NOISE)
+		if(alg == IMPROVED_NOISE)
 		{
 			return ImprovedNoise.getNoiseImage();
 		}
 		
 		return null;
 	}
-	
 }
