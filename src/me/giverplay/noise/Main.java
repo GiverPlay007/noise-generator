@@ -26,7 +26,7 @@ public class Main extends JPanel
 	
 	public static void main(String[] args)
 	{
-		new Main(IMPROVED_NOISE);
+		new Main(RANDOM_NOISE);
 	}
 	
 	protected void paintComponent(Graphics g) 
